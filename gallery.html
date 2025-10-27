@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery 📸</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Gallery 📸</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="write.html">Write</a>
+    </nav>
+  </header>
+
+ <main>
+  <div class="carousel">
+    <div class="carousel-track gallery"></div>
+  </div>
+</main>
+
+<script src="script.js"></script>
+
+    <script>
+        const track = document.querySelector('.carousel-track');
+        const slides = Array.from(track.children);
+        const nextButton = document.querySelector('.next');
+        const prevButton = document.querySelector('.prev');
+        const slideWidth = slides[0].getBoundingClientRect().width;
+    
+        // Arrange the slides next to one another
+        slides.forEach((slide, index) => {
+        slide.style.left = slideWidth * index + 'px';
+        });
+    
+        const moveToSlide = (track, currentSlide, targetSlide) => {
+        track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
+        currentSlide.classList.remove('current-slide');
+        targetSlide.classList.add('current-slide');
+        };
+    
+        prevButton.addEventListener('click', e => {
+        const currentSlide = track.querySelector('.current-slide') || slides[0];
+        const prevSlide = currentSlide.previousElementSibling || slides[slides.length - 1];
+        moveToSlide(track, currentSlide, prevSlide);
+        });
+    
+        nextButton.addEventListener('click', e => {
+        const currentSlide = track.querySelector('.current-slide') || slides[0];
+        const nextSlide = currentSlide.nextElementSibling || slides[0];
+        moveToSlide(track, currentSlide, nextSlide);
+        });
+    
+        // Initialize the first slide as current
+        slides[0].classList.add('current-slide');
+    </script>
+</body>
+</html>

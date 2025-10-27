@@ -1,0 +1,185 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #df6b84, #4464c3);
+  margin: 0;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  background: #ffd8e0;
+  color: #3d405c;
+  padding: 20px 10px;
+  border-bottom: 2px solid #f5c4ce;
+}
+
+nav a {
+  margin: 0 10px;
+  color: #5a3d5c;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 20px;
+  background: rgb(227, 117, 168);
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+h1, h2 {
+  color: #5a3d5c;
+}
+
+textarea, input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #f0bcd2;
+  border-radius: 8px;
+  font-family: inherit;
+  resize: none;
+}
+
+button {
+  background-color: #f080a1;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e86d93;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto; /* preserve aspect ratio */
+  max-height: 280px; /* limit very tall images */
+  object-fit: contain; /* don't crop — fit image inside box */
+  border-radius: 8px;
+  background: #ffffff; /* in case image has transparent areas */
+}
+#countdown-container {
+  text-align: center;
+  background: linear-gradient(to right, #773141, #ffe4e1);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: fit-content;
+  margin: 20px auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+#countdown {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #d63384;
+}
+/* ---------- Birthday Countdown Styles ---------- */
+#countdown-container {
+  text-align: center;
+  background: linear-gradient(to right, #ffd1dc, #ffe4e1);
+  padding: 20px 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: fit-content;
+  margin: 20px auto;
+  font-family: 'Poppins', sans-serif;
+  transition: background 1s ease;
+}
+
+/* Countdown number animation */
+#countdown {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #d63384;
+  animation: pulse 1s infinite;
+}
+
+/* Pulse animation for countdown numbers */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); color: #ff69b4; }
+  100% { transform: scale(1); }
+}
+.carousel {
+  position: relative;
+  width: 80%;
+  max-width: 600px;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-track img {
+  width: 100%;
+  height: auto; /* preserve aspect ratio */
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.7);
+  border: none;
+  font-size: 2rem;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+.prev:hover, .next:hover {
+  background: rgba(255,255,255,0.9);
+}
+#progress-bar-container {
+  width: 90%;
+  max-width: 500px;
+  height: 20px;
+  background-color: #3734d3;
+  border-radius: 10px;
+  margin: 10px auto;
+  overflow: hidden;
+}
+
+#progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #e9e7e5, #e0dfdb);
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+.prompt {
+  background: #fff0f6;
+  border: 1px solid #ffb6c1;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-style: italic;
+  color: #d63384;
+}

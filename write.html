@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Write a Letter 💌</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Write a Letter 💌</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+    </nav>
+  </header>
+
+  <main class="write-page">
+    <section class="prompt">
+  <p id="dailyPrompt">📝 Today's prompt will appear here...</p>
+</section>
+
+    <form id="postForm">
+      <input type="text" id="title" placeholder="Title (e.g. Dear Luke, or Turning 24)" required>
+      <textarea id="content" rows="8" placeholder="Write your letter here..." required></textarea>
+      <input type="file" id="image" accept="image/*">
+      <button type="submit">Save Letter</button>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

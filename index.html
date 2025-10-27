@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bukola’s Birthday Letters 🎂</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>✨ Bukola’s Birthday Letters ✨</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="write.html">Write</a>
+      <a href="gallery.html">Gallery</a>
+       <a href="future.html" class="btn">💌 Letters to My Future Self</a>
+    </nav>
+  </header>
+  <div id="countdown-container">
+  <h2>🎂 Birthday Countdown 🎂</h2>
+  <p id="countdown"></p>
+  <div id="progress-bar-container">
+    <div id="progress-bar"></div>
+  </div>
+</div>
+
+
+  <main>
+    <section class="intro">
+      <h2>Welcome</h2>
+      <p>
+        This is my little space for reflection, memories, and gratitude — a collection of thoughts, letters, and pictures around my birthday.
+      </p>
+      <p>
+        Feel free to explore the letters I’ve written or browse through the gallery. 💌
+      </p>
+    </section>
+
+    <section id="posts"></section>
+  </main>
+
+  <footer>Made with love, coffee, and a little overthinking ☕</footer>
+
+  <script src="script.js"></script>
+  <script>
+  // 🎉 Set your birthday date (adjust year if you want it to count down to the next one)
+  const birthday = new Date("Nov 13, 2025 00:00:00").getTime();
+
+  const timer = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = birthday - now;
+
+    // Time calculations
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML =
+      days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+    // When the countdown finishes
+    if (distance < 0) {
+      clearInterval(timer);
+      document.getElementById("countdown").innerHTML = "🎉 Happy Birthday Bukola! 🎈";
+    }
+  }, 1000);
+</script>
+
+</body>
+</html>
